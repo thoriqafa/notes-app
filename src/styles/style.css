@@ -22,21 +22,33 @@ h1 {
 
 /* Note Item Styles */
 .note-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Mengatur agar child items berada di kiri */
     background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.2s ease-in-out;
+    position: relative; /* Menambahkan properti position relative untuk position absolute di dalamnya */
 }
 
-.note-item:hover {
-    transform: scale(1.05);
+.note-item__delete {
+    position: absolute;
+    top: 5px; /* Atur jarak dari atas */
+    right: 5px; /* Atur jarak dari kanan */
+    padding: 8px;
+    font-size: 18px;
+    background-color: orangered;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .note-title {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .note-body {
