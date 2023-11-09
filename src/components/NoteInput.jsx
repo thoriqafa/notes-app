@@ -3,7 +3,7 @@ import React from "react";
 class NoteInput extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             title: '',
             body: '',
@@ -15,19 +15,18 @@ class NoteInput extends React.Component {
     }
 
     onTitleChangeEventHandler(event) {
-        this.setState(() => {
-            return {
-                title: event.target.value
-            }
-        })
+        const newTitle = event.target.value;
+        if (newTitle.length <= 50) {
+            this.setState({
+                title: newTitle,
+            });
+        }
     }
 
     onBodyChangeEventHandler(event) {
-        this.setState(() => {
-            return {
-                body: event.target.value
-            }
-        })
+        this.setState({
+            body: event.target.value,
+        });
     }
 
     onSubmitEventHandler(event) {
@@ -36,11 +35,23 @@ class NoteInput extends React.Component {
     }
 
     render() {
+        const remainingChars = 50 - this.state.title.length;
         return (
             <form className="note-input" onSubmit={this.onSubmitEventHandler}>
-                <input type="text" placeholder="Title" value={this.state.title} onChange={this.onTitleChangeEventHandler} />
-                <input type="text" placeholder="Body" value={this.state.body} onChange={this.onBodyChangeEventHandler} />
-                <button type="submit">Add</button>
+                <input
+                    type="text"
+                    placeholder="Judul"
+                    value={this.state.title}
+                    onChange={this.onTitleChangeEventHandler}
+                />
+                <p>Karakter tersisa: {remainingChars}</p>
+                <input
+                    type="text"
+                    placeholder="Isi Catatan"
+                    value={this.state.body}
+                    onChange={this.onBodyChangeEventHandler}
+                />
+                <button type="submit">Tambah</button>
             </form>
         )
     }
