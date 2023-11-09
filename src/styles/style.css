@@ -1,0 +1,45 @@
+/* App Styles */
+.note-app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(45, 24, 96);
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #fff;
+}
+
+/* Notes List Styles */
+.note-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Note Item Styles */
+.note-item {
+    background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.note-item:hover {
+    transform: scale(1.05);
+}
+
+.note-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.note-body {
+    font-size: 14px;
+    color: #fff;
+}
